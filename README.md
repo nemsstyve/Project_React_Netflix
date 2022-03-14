@@ -1,3 +1,2 @@
-# Project_React_Netflix
+# Project_React_Netflix        -    Bassirou Gueye
 
-Bassirou Gueye
