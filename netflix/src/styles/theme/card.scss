@@ -1,0 +1,31 @@
+.products__grid {
+    display: flex;
+    flex-wrap: wrap;
+   
+    justify-content: space-around;
+    
+    .product__card {
+        margin: 20px;
+        &:hover {
+            transform: scale(1.25);
+            z-index: 2;
+          }
+        .product__img {
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 4px;
+  
+            }
+        }
+        .product__data {
+            h2 {
+                font-size: 15px;
+                width: 190px;
+                text-align: center;
+                font-weight: bold;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        }
+    }
+}

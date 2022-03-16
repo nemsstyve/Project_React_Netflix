@@ -1,4 +1,18 @@
-import Head from 'next/head'
+import TitlePage from "../components/TitlePage";
+export default function Home() {
+  return (
+    <div className="page__home">
+      <TitlePage title="Films, séries TV et bien plus en illimité."/>
+    </div>
+  )
+}
+
+
+
+
+
+
+/*import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
@@ -67,3 +81,4 @@ export default function Home() {
     </div>
   )
 }
+*/
