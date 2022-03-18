@@ -11,7 +11,14 @@ const MovieCard = (props) => {
               </div>
               <div className="product__data">
                 <h2 style={{color : 'white'}}>{props.movie.title}</h2>
-               
+                <center><p>
+                  <Link href={`/movie/${props.movie.id}`} >
+                  {/* <Link href={'/shop/' + props.product.id} */}
+                    <a style={{textDecoration :'none',color:'red'}}>
+                      Voir le film
+                    </a>
+                  </Link>
+                </p></center>  
                 
               </div>
             </div>
