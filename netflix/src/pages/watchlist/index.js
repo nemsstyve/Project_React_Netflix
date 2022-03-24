@@ -23,6 +23,7 @@ const Index = () => {
   
   return (
     <div className="page__cart">
+       <br/><br/><br/><br/><br/><br/>
       <TitlePage title="Watchlist" /><br/>
       
       {watchlist ? (

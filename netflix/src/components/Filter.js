@@ -1,21 +1,29 @@
-import React, { useEffect } from "react";
-const Filter = ({ movies, setFiltered, activeGenre, setActiveGenre }) => {
+import React, { useEffect, useState } from "react";
+
+const Filter = ({ movies, setFiltered, activeGenre, setActiveGenre,nameGenre, setNameGenre}) => {
   useEffect(() => {
     if (activeGenre === 0) {
-      setFiltered(movies); //Checks- don't do anything, just return all
+      setFiltered(movies);
+       //Checks- don't do anything, just return all
       return;
     }
+    
     const filtered = movies.filter((movie) =>
       movie.genre_ids.includes(activeGenre),
     );
     setFiltered(filtered);
+
+   
   }, [activeGenre]);
+
+
+  
 return (
 <div class="dropdown">
     <button class="dropbtn">Genres</button>
     <div class="dropdown-content">
-        <button onClick={() => setActiveGenre(0)}className={activeGenre === 0 ? "active" : ""}>All</button>
-        <button onClick={() => setActiveGenre(28)}className={activeGenre === 28 ? "active" : ""}>Action</button>
+        <button onClick={() => setActiveGenre(0) && FectNameGenre("All")}className={activeGenre === 0 ?  "active" : ""}>All</button>
+        <button onClick={() => setActiveGenre(28) && FectNameGenre("Action")}className={activeGenre === 28 ? "active" : ""}>Action</button>
         <button onClick={() => setActiveGenre(12)} className={activeGenre === 12 ? "active" : ""}>  Adventure </button>
         <button onClick={() => setActiveGenre(16)}className={activeGenre === 16 ? "active" : ""}>Animation</button>
         <button onClick={() => setActiveGenre(35)}className={activeGenre === 35 ? "active" : ""}>Comedy</button>

@@ -4,7 +4,30 @@ import netflix from "../public/netflix.png";
 
 const Header = () => {
   return (
-    <header className="header__main">
+
+    <div className="nav">
+      <img src={netflix.src} className="nav__logo" alt="Netflix" />
+      <nav className="nav__links">
+        <Link href="/">
+              <a className="nav__link">Movies</a>
+        </Link>
+        <Link href="/moviebytitle">
+              <a className="nav__link">Search</a>
+        </Link>
+        <Link href="/watchlist">
+              <a className="nav__link">Watchlist</a>
+        </Link>
+        <Link href="/#">
+ 
+          <button type="button" className="btn btn__color-red">
+                S'identifier
+              
+          </button>
+        </Link> 
+      
+      </nav>
+    </div>
+   /* <header className="header__main">
       <div className="header__logo">
         <img src={netflix.src} alt="nike" />
       </div>
@@ -12,12 +35,17 @@ const Header = () => {
         <ul className="nav__list">
           <li className="nav__item">
             <Link href="/">
-              <a className="nav__link">Home</a>
+              <a className="nav__link">Movies</a>
             </Link>
           </li>
           <li className="nav__item">
-            <Link href="/movie">
-              <a className="nav__link">Movies</a>
+            <Link href="/moviebytitle">
+              <a className="nav__link">Search</a>
+            </Link>
+          </li>
+          <li className="nav__item">
+            <Link href="/watchlist">
+              <a className="nav__link">Watchlist</a>
             </Link>
           </li>
           <Link href="/#">
@@ -31,7 +59,7 @@ const Header = () => {
        
         </ul>
       </nav>
-    </header>
+    </header>*/
   );
 };
 

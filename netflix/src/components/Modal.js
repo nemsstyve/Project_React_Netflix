@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import TitlePage from "../../../components/TitlePage";
-import movieService from "../../../services/movie.service";
-import Button from "../../../components/Button";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
+import AddIcon from '@mui/icons-material/Add';
 
-
-const Index = () => {
+const Index = ({bannerStyle,movie, popup, popupStatut}) => {
   const router = useRouter();
-  const [movie, setMovie] = useState();
+ // const [movie, setMovie] = useState();
   const [valid, setValid] = useState(false);
 
 
@@ -19,11 +18,6 @@ const Index = () => {
       });
   
   };
-
-  
-
-
-
 
   const dateParser = (date) =>{
     let newDate = new Date(date).toLocaleDateString('fr-FR', {
@@ -39,17 +33,7 @@ const Index = () => {
 }
   
 
-  useEffect(() => {
-    const id = router.query.id;
-    movieService.getmovieById(id) 
-     .then((data) => {
-        setMovie(data);
-        console.log(data)
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  const addTowatchlist = (element) => {
+ const addTowatchlist = (element) => {
     //On créé un nouvel object avec une nouvelle propriété quantity
     setValid(true);
     let movieToInsert = {
@@ -92,14 +76,26 @@ const Index = () => {
   return (
     <div className={`quickView ${popupStatut && "open"}`} >
     <div className="quickView__banner" style={bannerStyle} >
+    <center>
+            <button className="banner__button" onClick={() => addTowatchlist(movie)}>
+                <AddIcon/> Watchlist
+            </button>
+        
+        </center>    
        <div className="quickView__content">
           <h3 className="quickView__title">
           {movie?.title || movie?.name || movie?.original_title}
           </h3>
-          <p>
+          <h3 style={{color : "rgba(120,120,120,3)"}}>
+                Publié le : {dateParser(movie?.release_date)}
+          </h3>
+          <p style={{textAlign:"justify"}}>
             {movie?.overview}
           </p>
        </div>
+      
+        {valid && showToast(movie.title)}
+        <ToastContainer limit={1} autoClose={2000}/>
        <button className="quickView__close" onClick={popup}>
            <CancelOutlinedIcon fontSize='large'/>
        </button>

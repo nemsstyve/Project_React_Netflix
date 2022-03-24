@@ -1,0 +1,57 @@
+.quickView{
+    position: fixed;
+    z-index: 2;
+    border-radius: 10px;
+    background-color: #111;
+    height: calc(100vh - 60px);
+    top: 60px;
+    box-shadow: 0 0 10px rgba(000, 000, 000, 0.3);
+    margin: 0 2%;
+    overflow-y: scroll;
+    display: none;
+    &.open{
+      display: block;
+    }
+    &__banner{
+        padding-top: 50vh;
+        height: 50vh;
+        
+    }
+    &__content{
+        padding:3rem;
+        font-size: 1rem;
+    }
+    &__close {
+        cursor: pointer;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        color: red;
+      }
+    
+      @media screen and (min-width:768px) {
+        width: 50%;
+        left: 25%;
+        right: 25%;
+      }
+
+}
+
+.banner__button{
+    border: none;
+    background-color: rgba(110,110,110,0.7);
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+    color: inherit;
+    font-weight: 600;
+    padding: 0.4rem 1rem 0.4rem 0.5rem;
+    margin-right: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.p{
+  text-align: justify;
+}
