@@ -11,6 +11,10 @@ const MovieCard = ({movie,isPoster}) => {
    popup? setPopup(false) : setPopup(true);
  }  
 
+ function handleClosePopup(){
+  setPopup(false);
+}  
+
  const dateParser = (date) =>{
     let newDate = new Date(date).toLocaleDateString('fr-FR', {
       year:"numeric",
@@ -29,6 +33,7 @@ const MovieCard = ({movie,isPoster}) => {
 
  }
     return (
+      <>
         <div key={movie.id}>
             {isPoster? (
                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} 
@@ -53,7 +58,8 @@ const MovieCard = ({movie,isPoster}) => {
 
             
           </div>
-        
+         
+       </> 
     );
 }
 

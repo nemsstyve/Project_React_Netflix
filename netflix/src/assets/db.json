@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "gueyebachir98@gmail.com",
+      "password": "$2a$10$t21D.5gy.ZfgJ48dVQw8COWhwYa6vDJFR/Qx3HuR/J1OtZ9LtdBu2",
+      "username": "Bachir",
+      "id": 1
+    },
+    {
+      "email": "bachireuh@gmail.com",
+      "password": "$2a$10$t3.Z/BRaXpy7FjySQI8Z4uNhPGW.P0JVT75ugop9ZNr5Fk9TdBrS.",
+      "username": "Sara",
+      "id": 2
+    }
+  ]
+}

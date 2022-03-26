@@ -23,5 +23,10 @@ export default {
     getmovieTrending() {
         return fetch(`${BASE_URL_Trending}/trending/all/week?api_key=${API_KEY}`)
         .then((res)=> res.json())
+    },
+    getmovieTrailer(id) {
+        return fetch(`${apiUrlMovie}/${id}?api_key=7f73b4bd455e5ace6fdc9f0d04e45857&append_to_response=videos`)
+        .then((res)=> res.json())
     }
+
 }

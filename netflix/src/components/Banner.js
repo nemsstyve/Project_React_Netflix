@@ -4,6 +4,8 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import movieService from '../services/movie.service';
 import Modal from './Modal';
+import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer';
 
 
 
@@ -11,6 +13,7 @@ function Banner() {
   
   const [movie, setMovie] = useState([]);
   const [popup, setPopup] = useState(false);
+  const [trailerUrl, setTrailerUrl]= useState(""); 
 
    function handleClickPopup(){
      popup? setPopup(false) : setPopup(true);
@@ -44,21 +47,47 @@ function Banner() {
      backgroundPosition: "center center",
 
   }
-  
+
+/*  const handleClick = (movie) => {
+      if(trailerUrl){
+        setTrailerUrl("")
+      }
+      else{
+        movieTrailer(movie?.title || "")
+        .then((url) => {
+            const urlParams = new URLSearchParams(new URL(url).search);
+            setTrailerUrl(urlParams.get("v"))
+        }).catch((error) => console.log(error));
+      }
+      
+
+  };
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars:{
+      autoPlay : 1,
+    },
+  }
+  */
 
   console.log(popup)
 
   return (
     <header className='banner' style={bannerStyle} > 
+       
         <div className="banner__content">
+
           <h1 className="banner__title">
             {movie?.title || movie?.name || movie?.original_title}
           </h1>
+         
           <p className="banner__description">
             {truncateText(movie?.overview, 100)}
           </p>
           <div className="banner__buttons">
-            <button className="banner__button banner__button--play">
+            <button  className="banner__button ">
                 <PlayArrowIcon/> Lecture
             </button>
             <button className="banner__button" onClick={handleClickPopup}>
@@ -67,14 +96,18 @@ function Banner() {
           </div>
 
         </div>
+
         <Modal 
            bannerStyle={bannerStyle}
            movie={movie}
            popup={handleClickPopup}
            popupStatut={popup}/>
-       
+        
     </header>
   )
 }
 
 export default Banner;
+
+// }
+        
