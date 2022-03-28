@@ -17,7 +17,7 @@ const Header = () => {
         <Link href="/watchlist">
               <a className="nav__link">Watchlist</a>
         </Link>
-        <Link href="/#">
+        <Link href="/login">
  
           <button type="button" className="btn btn__color-red">
                 S'identifier

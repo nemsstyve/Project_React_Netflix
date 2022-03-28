@@ -1,36 +1,105 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Input from "../../components/input";
+import Button from "../../components/Button";
+import TitlePage from "../../components/TitlePage";
+import userService from "../../services/user.service";
+import ModalAuth from "../../components/ModalAuth";
+import Link from "next/link";
 
 function login() {
-
+    
+    const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
         email: '', // required
         password: '' // required
     })
-
+    const home = useRouter();
     function handleSubmit(e) {
         e.preventDefault()
-        fetch('http://localhost:3003/login', {
+       /* fetch('http://localhost:3003/login', {
             method: 'POST',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify(formData)
         })
-        .then(res => res.json())
-        .then(data => console.log(data.user))
+        
+        .then(res => res.json())*/
+        userService.login(formData)
+        .then(data =>{
+
+            if(data.error){
+                setShowModal(true);
+                
+             }
+            else{
+
+                console.log(data)
+                console.log(data.user.id)
+                localStorage.setItem("netflix_user", data.accessToken)
+                localStorage.setItem("username", data.user.username)
+                localStorage.setItem("firstname", data.user.firstname)
+                localStorage.setItem("lastname", data.user.lastname)
+                home.push('/profil')
+              }    
+
+        } ) .catch( error => {
+            setShowModal(true);
+            console.log('An erro occured:' , error)
+        })
     }
 
     function handleChange(e) {
         setFormData({...formData, [e.target.name] : e.target.value})
     }
 
+    
+
     return (
         <div>
-            <br/><br/>
-            <h1>Login Form</h1>
-            <form className='login-form' onSubmit={e => handleSubmit(e)}>
-                <input type='text' placeholder='Email' value={formData.email} name='email' onChange={e => handleChange(e)} ></input>
-                <input type='text' placeholder='Password' value={formData.password} name='password' onChange={e => handleChange(e)} ></input>
-                <button className='login-btn' type='submit'>Login</button>
+           
+           <ModalAuth title="Erreur" isActive={showModal} closeFunction={()=>setShowModal(!showModal)} type="information">
+                    <p>Une erreur est survenue, veuillez contacter le service client.</p>
+            </ModalAuth>
+            <form className='form' onSubmit={e => handleSubmit(e)}>
+                <br/><br/><br/><br/><br/>
+                <TitlePage title="Login"/>
+                <br/>
+                <Input
+                    label="Email"
+                    name="email"
+                    id="email"
+                    type="text"
+                    classes="form__input"
+                    required={true}
+                    value={formData.email}
+                    placeholder="Veuillez saisir votre email"
+                    handleChange={e => handleChange(e)}
+                    
+                    />
+                
+                    <Input
+                        label="Password"
+                        name="password"
+                        id="password"
+                        type="password"
+                        classes="form__input"
+                        required={true}
+                        placeholder="Veuillez définir un mot de passe"
+                        handleChange={e => handleChange(e)}
+                        value={formData.password}
+                    />
+                
+                <center><Button title="login" classes="btn btn__color-red" type="submit"/>   </center>
+                <br/>
+                <center><hr/></center>
+                <br/>
+                <center>
+                    <h3 className="label__link">Vous n'avez pas de compte ? <Link href="/register">
+                    <a className="nav__link"> Inscrivez vous</a></Link> </h3>
+                </center>    
             </form>
+
+            
         </div>
     )
 }
