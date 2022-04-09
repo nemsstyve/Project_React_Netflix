@@ -7,7 +7,7 @@ import userService from "../../services/user.service";
 import ModalAuth from "../../components/ModalAuth";
 import Link from "next/link";
 
-function login() {
+const login = () =>{
     
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
@@ -36,6 +36,7 @@ function login() {
                 console.log(data)
                 console.log(data.user.id)
                 localStorage.setItem("netflix_user", data.accessToken)
+                localStorage.setItem("users", JSON.stringify(data.user))
                 localStorage.setItem("username", data.user.username)
                 localStorage.setItem("firstname", data.user.firstname)
                 localStorage.setItem("lastname", data.user.lastname)

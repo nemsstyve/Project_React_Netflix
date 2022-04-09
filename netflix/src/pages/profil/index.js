@@ -4,6 +4,7 @@ import userService from '../../services/user.service';//import withAuth from '..
 import { useRouter } from "next/router";
 import withAuth from '../../HOC/withAuth';
 import Button from '../../components/Button';
+import { fontWeight } from '@mui/system';
 
 
 const index = () => {
@@ -48,18 +49,21 @@ const index = () => {
   
     return (
         <div>
-            <br/><br/><br/><br/><br/>
-            <h1 style={{color:"white"}}>Profil :</h1>
-            <h2 style={{color:"white"}}>Username : {username} </h2>
-            <h2 style={{color:"white"}}>Firstname : {firstname} </h2>
-            <h2 style={{color:"white"}}>Lastname : {lastname} </h2>
-         
-            
-
-            <center> <Button title="logout" function={logout} type="button" classes="btn btn__color-black"/></center>
-
-            
-        </div>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <br/><br/><br/><br/><br/>
+      <div className="card_profil">
+           <h1> {firstname} {lastname}</h1>
+             <p className="profil_title">votre username est <span style={{fontWeight :"bold"}}>{username}</span></p>
+           
+            <p>
+             <button className="profil_button" onClick={logout}>Logout</button>
+        </p>
+      </div>
+    </div>
+       
     );
 };
 

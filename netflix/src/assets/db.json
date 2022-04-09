@@ -7,6 +7,22 @@
       "firstname": "Bassirou",
       "lastname": "gueye",
       "id": 1
+    },
+    {
+      "email": "ollandiaye@gmail.com",
+      "password": "$2a$10$CTl2FBCW2mpbyfdMyz9UvOjVtGo0eJ1SKqhrJxnfiO3QUDq.n0VN6",
+      "username": "chirba",
+      "firstname": "Ouleye Diaw",
+      "lastname": "Cisse",
+      "id": 2
+    },
+    {
+      "email": "Ladyfa6@gmail.com",
+      "password": "$2a$10$UAUBwlFH7mmkQpgA07Pw9OvIbsHc9fpvdJpS2lL7WlNHjyLFmiMUO",
+      "username": "user",
+      "firstname": "Fatou Gueye",
+      "lastname": "Niang",
+      "id": 3
     }
   ]
 }

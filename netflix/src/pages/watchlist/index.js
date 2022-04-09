@@ -64,20 +64,5 @@ const Index = () => {
 };
 
 
-//{renderTotalAmount()}
-/**<tr key={cartItem.id}>
-                  <td style={{color : 'white'}}>{cartItem.title}</td>
-                  <td>
-                    <button onClick={() => decrementQty(cartItem)}>-</button>
-                    {cartItem.quantity}
-                    <button onClick={() => incrementQty(cartItem)}>+</button>
-                  </td>
-                  <td>
-                      <img src={"https://image.tmdb.org/t/p/w500" +cartItem.backdrop_path} alt={cartItem.path}/>
-                  </td>
-                  {/* .Filter() }
-                  <td>
-                    <button onClick={()=>deleteMovie(cartItem)}>Supprimer</button>
-                  </td>
-                </tr> */
+
 export default Index;

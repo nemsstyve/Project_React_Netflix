@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-const Filter = ({ movies, setFiltered, activeGenre, setActiveGenre,nameGenre, setNameGenre}) => {
+const FilterTopRated = ({ moviestoprated, setFilteredTopRated, activeGenre, setActiveGenre,nameGenre, setNameGenre}) => {
   useEffect(() => {
     if (activeGenre === 0) {
-      setFiltered(movies);
+      setFilteredTopRated(moviestoprated);
        //Checks- don't do anything, just return all
       return;
     }
     
-    const filtered = movies.filter((movie) =>
+    const filtered = moviestoprated.filter((movie) =>
       movie.genre_ids.includes(activeGenre),
     );
-    setFiltered(filtered);
+    setFilteredTopRated(filtered);
 
    
   }, [activeGenre]);
@@ -48,28 +48,4 @@ return (
     
   );
 };
-export default Filter;
-
-/*
-<div className="filter-container">
-
-      
-
-      <ul className="dropdown">
-        <li>
-            <button onClick={() => setActiveGenre(0)}className={activeGenre === 0 ? "active" : ""}>All</button>
-        </li>
-        
-        <li>
-            <button onClick={() => setActiveGenre(35)}className={activeGenre === 35 ? "active" : ""}>Comedy</button>
-        </li>
-        <li>
-          <button onClick={() => setActiveGenre(28)} className={activeGenre === 28 ? "active" : ""}>  Action </button>
-        </li>
-      </ul>
-      
-      
-    </div>
-
-
-*/
+export default FilterTopRated;

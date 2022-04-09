@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TitlePage from "../../components/TitlePage";
 import movieservice from "../../services/movie.service";
-import MovieCard from "../../components/MovieCard";
+import MovieCardDiscover from "../../components/MovieCardDiscover";
 
 const Index = () => {
   const [movies, setMovies] = useState();
@@ -42,7 +42,7 @@ const Index = () => {
                    className="input-search"
                    onChange={(e)=> setSearch(e.target.value)}
                />
-               <input className="button-submit"onClick={()=>onSuggestHandler(search)} type="submit" value="Rechercher"/>
+               <input className="button-submit" onClick={()=>onSuggestHandler(search)} type="submit" value="Rechercher"/>
            </form>
         </center>
       </div>
@@ -51,7 +51,7 @@ const Index = () => {
         {movies &&
            movies.map((movie) => (
            
-           <MovieCard movie={movie} key={movie.id} isPoster={true}/>
+           <MovieCardDiscover movie={movie} key={movie.id} isPoster={true}/>
            
           ))}
         </div>  

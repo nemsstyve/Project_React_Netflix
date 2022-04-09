@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { ToastContainer,toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
-import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
+
 import AddIcon from '@mui/icons-material/Add';
 
 const Index = ({bannerStyle,movie, popup, popupStatut}) => {

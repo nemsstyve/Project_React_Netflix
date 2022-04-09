@@ -9,7 +9,7 @@ import Link from "next/link";
 
 
 
-function register() {
+const register = () => {
     const [showModal, setShowModal] = useState(false);
     const[success, setSuccess] = useState(false);
     
@@ -39,6 +39,7 @@ function register() {
 
                 console.log(data)
                 localStorage.setItem("netflix_user", data.accessToken)
+                localStorage.setItem("users", JSON.stringify(data.user))
                 localStorage.setItem("username", data.user.username)
                 localStorage.setItem("firstname", data.user.firstname)
                 localStorage.setItem("lastname", data.user.lastname)

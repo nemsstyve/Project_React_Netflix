@@ -73,3 +73,36 @@
 
     
 }
+
+
+.close-video {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+}
+
+.youtube-container {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.close-video_modal {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: 10px;
+}
+
+.youtube-container_modal {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
