@@ -5,9 +5,8 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 
 const MovieCardDiscover = ({movie,isPoster}) => {
- // const link = 'https://api.themoviedb.org/3/discover/movie?api_key=7f73b4bd455e5ace6fdc9f0d04e45857&language=fr&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate'
  
- const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState(false);
 
  function handleClickPopup(){
    popup? setPopup(false) : setPopup(true);
