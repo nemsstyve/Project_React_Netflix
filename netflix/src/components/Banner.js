@@ -7,9 +7,6 @@ import Modal from './Modal';
 import YouTube from 'react-youtube';
 import axios from 'axios';
 
-
-
-
 const Banner = () =>{
   
   const [movie, setMovie] = useState([]);

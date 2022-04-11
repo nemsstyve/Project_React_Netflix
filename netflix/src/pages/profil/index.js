@@ -48,12 +48,12 @@ const index = () => {
  
   
     return (
-        <div>
+    <div className='profil'>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
-      <br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <div className="card_profil">
            <h1> {firstname} {lastname}</h1>
              <p className="profil_title">votre username est <span style={{fontWeight :"bold"}}>{username}</span></p>

@@ -20,42 +20,49 @@ const register = () => {
         username: '' ,// required
         firstname: '', //required
         lastname: ''
-    })
+    });
+    const [error,setError] = useState(false);
+
+    
 
     function handleSubmit(e) {
         e.preventDefault()
-        /*fetch('http://localhost:3003/users', {
-            method: 'POST',
-            headers: {'Content-Type' : 'application/json'},
-            body: JSON.stringify(formData)
-        })*/
-        userService.register(formData)
-        .then(data =>{
-             if(data.error){
-                setShowModal(true);
+        
+        if(formData.password.length < 6){
+            setError(true);
+        }
+        else
+        {
                 
-             }
-             else{
+                userService.register(formData)
+                .then(data =>{
+                    if(data.error){
+                        setShowModal(true);
+                        
+                    }
+                    else{
 
-                console.log(data)
-                localStorage.setItem("netflix_user", data.accessToken)
-                localStorage.setItem("users", JSON.stringify(data.user))
-                localStorage.setItem("username", data.user.username)
-                localStorage.setItem("firstname", data.user.firstname)
-                localStorage.setItem("lastname", data.user.lastname)
-                setSuccess(true)
+                        setError(false)
+                        console.log(data)
+                        localStorage.setItem("netflix_user", data.accessToken)
+                        localStorage.setItem("users", JSON.stringify(data.user))
+                        localStorage.setItem("username", data.user.username)
+                        localStorage.setItem("firstname", data.user.firstname)
+                        localStorage.setItem("lastname", data.user.lastname)
+                        setSuccess(true)
 
-             }
-           
-            
-             
-        })
-        .catch(
-            //Dans le cas où on aurait des erreurs de type server j'affiche ma modal
-            (err) => {
-              setShowModal(true);
-              console.log("ohhhhhhhhh : ",err)
-            })
+                    }
+                
+                    
+                    
+                })
+                .catch(
+                    //Dans le cas où on aurait des erreurs de type server j'affiche ma modal
+                    (err) => {
+                    setShowModal(true);
+                    console.log("ohhhhhhhhh : ",err)
+                    })
+        }        
     }
 
     function handleChange(e) {
@@ -137,6 +144,7 @@ const register = () => {
                     placeholder="Veuillez saisir un password"
                     handleChange={e => handleChange(e)}
                     />    
+                  {error && <p style={{color :"red"}}>Veuillez définir un mot de passe d'au moins 6 caractères</p>}    
            
                  <center><Button title="Register" classes="btn btn__color-red" type="register"/>   </center>
                  <br/>
@@ -148,6 +156,7 @@ const register = () => {
                 </center>   
             </form>
             {success &&  succesRegister()}
+        
 
           </div>  
         

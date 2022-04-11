@@ -59,7 +59,7 @@ const login = () =>{
         <div>
            
            <ModalAuth title="Erreur" isActive={showModal} closeFunction={()=>setShowModal(!showModal)} type="information">
-                    <p>Une erreur est survenue, veuillez contacter le service client.</p>
+                    <p>Une erreur est survenue, votre email ou password est incorrect.</p>
             </ModalAuth>
             <form className='form' onSubmit={e => handleSubmit(e)}>
                 <br/><br/><br/><br/><br/>

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import netflix from "../public/netflix.png";
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 const Header = () => {
   return (
@@ -17,6 +18,19 @@ const Header = () => {
         <Link href="/watchlist">
               <a className="nav__link">Watchlist</a>
         </Link>
+
+
+        <div className="banner__buttons">
+          <Link href="/profil">
+  
+            <button type="button" className="banner__button">
+                  <AssignmentIndIcon/>Profil
+                
+            </button>
+          </Link> 
+        </div> 
+
+        
         <Link href="/login">
  
           <button type="button" className="btn btn__color-red">
@@ -24,6 +38,8 @@ const Header = () => {
               
           </button>
         </Link> 
+
+      
       
       </nav>
     </div>
