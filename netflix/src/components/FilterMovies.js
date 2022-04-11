@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-const FilterTopRated = ({ moviestoprated, setFilteredTopRated, activeGenre, setActiveGenre,nameGenre, setNameGenre}) => {
+const FilterMovies = ({ movies, setFilteredDiscover, activeGenre, setActiveGenre,nameGenre, setNameGenre}) => {
   useEffect(() => {
     if (activeGenre === 0) {
-      setFilteredTopRated(moviestoprated);
+      setFilteredDiscover(movies);
        //Checks- don't do anything, just return all
       return;
     }
     
-    const filtered = moviestoprated.filter((movie) =>
+    const filtered = movies.filter((movie) =>
       movie.genre_ids.includes(activeGenre),
     );
-    setFilteredTopRated(filtered);
+    setFilteredDiscover(filtered);
 
    
   }, [activeGenre]);
@@ -48,4 +48,4 @@ return (
     
   );
 };
-export default FilterTopRated;
+export default FilterMovies;

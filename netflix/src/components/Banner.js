@@ -9,6 +9,7 @@ import axios from 'axios';
 
 
 
+
 const Banner = () =>{
   
   const [movie, setMovie] = useState([]);
@@ -78,6 +79,7 @@ const Banner = () =>{
   console.log(popup)
 
   return (
+  <>  
     <header className='banner' style={bannerStyle} > 
        
         <div className="banner__content">
@@ -146,6 +148,7 @@ const Banner = () =>{
            popupStatut={popup}/>
         
     </header>
+   </>  
   )
 }
 

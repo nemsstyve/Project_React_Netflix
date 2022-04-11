@@ -6,7 +6,7 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
 import AddIcon from '@mui/icons-material/Add';
 
-const Index = ({bannerStyle,movie, popup, popupStatut}) => {
+const Index = ({bannerStyle,movie, popup, popupStatut,closeFunction}) => {
   const router = useRouter();
  // const [movie, setMovie] = useState();
   const [valid, setValid] = useState(false);
@@ -24,10 +24,6 @@ const Index = ({bannerStyle,movie, popup, popupStatut}) => {
       year:"numeric",
       month:"long",
       day: "numeric",
-      //hour:"numeric",
-      //minute:"numeric",
-      //second:"numeric"
-
     })
     return newDate;
 }
@@ -74,34 +70,45 @@ const Index = ({bannerStyle,movie, popup, popupStatut}) => {
   };
   
   return (
-    <div className={`quickView ${popupStatut && "open"}`} >
-    <div className="quickView__banner" style={bannerStyle} >
-    <center>
-            <button className="banner__button" onClick={() => addTowatchlist(movie)}>
-                <AddIcon/> Watchlist
-            </button>
-        
-        </center>    
-       <div className="quickView__content">
-          <h3 className="quickView__title">
-          {movie?.title || movie?.name || movie?.original_title}
-          </h3>
-          <h3 style={{color : "rgba(120,120,120,3)"}}>
-                Publié le : {dateParser(movie?.release_date)}
-          </h3>
-          <p style={{textAlign:"justify"}}>
-            {movie?.overview}
-          </p>
-       </div>
-      
-        {valid && showToast(movie.title)}
-        <ToastContainer limit={1} autoClose={2000}/>
-       <button className="quickView__close" onClick={popup}>
-           <CancelOutlinedIcon fontSize='large'/>
-       </button>
-    </div>
-</div>
 
+   <>
+    {popupStatut ? (
+    <>  
+    <div className="overlay" onClick={closeFunction}></div>
+    <div className={`quickView ${popupStatut && "open"}`} >
+      <div className="quickView__banner" style={bannerStyle} >
+      <center>
+              <button className="banner__button" onClick={() => addTowatchlist(movie)}>
+                  <AddIcon/> Watchlist
+              </button>
+          
+          </center>    
+        <div className="quickView__content">
+            <h3 className="quickView__title">
+            {movie?.title || movie?.name || movie?.original_title}
+            </h3>
+            <h3 style={{color : "rgba(120,120,120,3)"}}>
+                  Publié le : {dateParser(movie?.release_date)}
+            </h3>
+            <p style={{textAlign:"justify"}}>
+              {movie?.overview}
+            </p>
+        </div>
+        
+          {valid && showToast(movie.title)}
+          <ToastContainer limit={1} autoClose={2000}/>
+        <button className="quickView__close" onClick={popup}>
+            <CancelOutlinedIcon fontSize='large'/>
+        </button>
+      </div>
+    </div>
+    </>
+     ) : (
+            ""
+           )} 
+      
+     
+  </>
     
       
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TitlePage from "../../components/TitlePage";
 import movieservice from "../../services/movie.service";
-import MovieCardDiscover from "../../components/MovieCardDiscover";
+import MovieCard from "../../components/MovieCard";
 
 const Index = () => {
   const [movies, setMovies] = useState();
@@ -51,7 +51,7 @@ const Index = () => {
         {movies &&
            movies.map((movie) => (
            
-           <MovieCardDiscover movie={movie} key={movie.id} isPoster={true}/>
+             <MovieCard movie={movie} key={movie.id} isPoster={true}/>
            
           ))}
         </div>  

@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Modal from './Modal';
 import { useState } from "react";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 
-const MovieCardDiscover = ({movie,isPoster}) => {
+const MovieCard = ({movie,isPoster}) => {
  
   const [popup, setPopup] = useState(false);
 
@@ -15,17 +14,6 @@ const MovieCardDiscover = ({movie,isPoster}) => {
  function handleClosePopup(){
   setPopup(false);
 }  
-
- const dateParser = (date) =>{
-    let newDate = new Date(date).toLocaleDateString('fr-FR', {
-      year:"numeric",
-      month:"long",
-      day: "numeric",
-    
-
-    })
-    return newDate;
-  }
 
   const bannerStyle = {
     backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
@@ -50,11 +38,12 @@ const MovieCardDiscover = ({movie,isPoster}) => {
                 )}
                 
                 
-                <center><button className="detail_plus banner__button" onClick={handleClickPopup}><HelpOutlineIcon/> Plus d'infos</button></center>
+                <center><button style={{zIndex :"1"}} className="detail_plus banner__button" onClick={handleClickPopup}><HelpOutlineIcon/> Plus d'infos</button></center>
 
            <Modal 
            bannerStyle={bannerStyle}
            movie={movie}
+           closeFunction={handleClosePopup}
            popup={handleClickPopup}
            popupStatut={popup}/>
 
@@ -64,5 +53,4 @@ const MovieCardDiscover = ({movie,isPoster}) => {
        </> 
     );
 }
-//"{props.movie?.title || props.movie?.name || props.movie?.original_title}"
-export default MovieCardDiscover;
+export default MovieCard;

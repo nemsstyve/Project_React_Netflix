@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import TitlePage from "../components/TitlePage";
 import movieService from "../services/movie.service";
 import Banner from "../components/Banner";
-import FilterDiscover from "../components/FilterDiscover";
-import MovieCardDiscover from "../components/MovieCardDiscover.js";
-import FilterTopRated from "../components/FilterTopRated";
-import MovieCardTopRated from "../components/MovieCardTopRated";
+import MovieCard from "../components/MovieCard";
+import FilterMovies from "../components/FilterMovies";
 
 const Index = () => {
   const [movies, setMovies] = useState();
@@ -45,7 +43,7 @@ const Index = () => {
       <div className="row">
         <h2 className="row__title">
               Discover 
-              <FilterDiscover movies={movies} setFilteredDiscover={setFilteredDiscover} activeGenre={activeGenre} setActiveGenre={setActiveGenre}  />
+              <FilterMovies movies={movies} setFilteredDiscover={setFilteredDiscover} activeGenre={activeGenre} setActiveGenre={setActiveGenre}  />
      
         </h2>
        
@@ -68,7 +66,7 @@ const Index = () => {
           {filteredDiscover &&
             filteredDiscover.map((movie) => (
             
-            <MovieCardDiscover movie={movie} key={movie.id} isPoster={true} />
+            <MovieCard movie={movie} key={movie.id} isPoster={true} />
             
             ))}
         </div>    
@@ -79,7 +77,7 @@ const Index = () => {
       <div className="row">
         <h2 className="row__title">
               Top Rated 
-              <FilterTopRated moviestoprated={moviestoprated} setFilteredTopRated={setFilteredTopRated} activeGenre={activeGenre} setActiveGenre={setActiveGenre}  />
+              <FilterMovies movies={moviestoprated} setFilteredDiscover={setFilteredTopRated} activeGenre={activeGenre} setActiveGenre={setActiveGenre}  />
      
         </h2>
        
@@ -102,7 +100,7 @@ const Index = () => {
           {filteredTopRated &&
             filteredTopRated.map((movietoprated) => (
             
-            <MovieCardTopRated movietoprated={movietoprated}  key={movietoprated.id}  isPoster={true} />
+            <MovieCard movie={movietoprated}  key={movietoprated.id}  isPoster={true} />
             
             ))}
         </div>    
