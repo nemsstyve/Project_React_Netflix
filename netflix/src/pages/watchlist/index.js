@@ -30,7 +30,7 @@ const Index = () => {
         <>
           <div className="products__grid">
           {watchlist.map((cartItem) => (
-            <div className="product__card">
+            <div className="product__card" key={cartItem.id}>
               <div className="product__img">
                 <img src={"https://image.tmdb.org/t/p/w500" +cartItem.backdrop_path} alt={cartItem.path}/>
                </div>

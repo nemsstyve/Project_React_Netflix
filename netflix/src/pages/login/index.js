@@ -7,7 +7,7 @@ import userService from "../../services/user.service";
 import ModalAuth from "../../components/ModalAuth";
 import Link from "next/link";
 
-const login = () =>{
+const Login = () =>{
     
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
@@ -95,7 +95,7 @@ const login = () =>{
                 <center><hr/></center>
                 <br/>
                 <center>
-                    <h3 className="label__link">Vous n'avez pas de compte ? <Link href="/register">
+                    <h3 className="label__link">Vous n&apos;avez pas de compte ? <Link href="/register">
                     <a className="nav__link"> Inscrivez vous</a></Link> </h3>
                 </center>    
             </form>
@@ -105,4 +105,4 @@ const login = () =>{
     )
 }
 
-export default login;
+export default Login;

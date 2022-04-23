@@ -7,7 +7,7 @@ import Button from '../../components/Button';
 import { fontWeight } from '@mui/system';
 
 
-const index = () => {
+const Index = () => {
 
    const [user, setUser] = useState();
    const [userlog, setUserlog] = useState();
@@ -67,4 +67,4 @@ const index = () => {
     );
 };
 
-export default withAuth(index);
+export default withAuth(Index);

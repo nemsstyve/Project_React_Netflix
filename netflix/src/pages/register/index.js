@@ -9,7 +9,7 @@ import Link from "next/link";
 
 
 
-const register = () => {
+const Register = () => {
     const [showModal, setShowModal] = useState(false);
     const[success, setSuccess] = useState(false);
     
@@ -144,7 +144,7 @@ const register = () => {
                     placeholder="Veuillez saisir un password"
                     handleChange={e => handleChange(e)}
                     />    
-                  {error && <p style={{color :"red"}}>Veuillez définir un mot de passe d'au moins 6 caractères</p>}    
+                  {error && <p style={{color :"red"}}>Veuillez définir un mot de passe d&apos;au moins 6 caractères</p>}    
            
                  <center><Button title="Register" classes="btn btn__color-red" type="register"/>   </center>
                  <br/>
@@ -163,4 +163,4 @@ const register = () => {
     )
 }
 
-export default register;
+export default Register;
