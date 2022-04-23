@@ -1,2 +1,2 @@
-# Project_React_Netflix        -    Bassirou Gueye
+# Project_React_Netflix        -    Bassirou Gueye / Styve Nematcha
 
