@@ -1,2 +1,4 @@
-# Project_React_Netflix        -    Bassirou Gueye
+# Project_React_Netflix 
+
+Reproduction du site Netflix
 
