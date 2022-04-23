@@ -34,7 +34,7 @@ const Header = () => {
         <Link href="/login">
  
           <button type="button" className="btn btn__color-red">
-                S'identifier
+                S&apos;identifier
               
           </button>
         </Link> 

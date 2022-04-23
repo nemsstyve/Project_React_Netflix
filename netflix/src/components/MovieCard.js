@@ -38,7 +38,7 @@ const MovieCard = ({movie,isPoster}) => {
                 )}
                 
                 
-                <center><button className="detail_plus banner__button" onClick={handleClickPopup}><HelpOutlineIcon/> Plus d'infos</button></center>
+                <center><button className="detail_plus banner__button" onClick={handleClickPopup}><HelpOutlineIcon/> Plus d&apos;infos</button></center>
 
            <Modal 
            bannerStyle={bannerStyle}

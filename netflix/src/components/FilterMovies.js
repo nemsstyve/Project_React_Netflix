@@ -19,9 +19,9 @@ const FilterMovies = ({ movies, setFilteredDiscover, activeGenre, setActiveGenre
 
   
 return (
-<div class="dropdown">
-    <button class="dropbtn">Genres</button>
-    <div class="dropdown-content">
+<div className="dropdown">
+    <button className="dropbtn">Genres</button>
+    <div className="dropdown-content">
         <button onClick={() => setActiveGenre(0) && FectNameGenre("All")}className={activeGenre === 0 ?  "active" : ""}>All</button>
         <button onClick={() => setActiveGenre(28) && FectNameGenre("Action")}className={activeGenre === 28 ? "active" : ""}>Action</button>
         <button onClick={() => setActiveGenre(12)} className={activeGenre === 12 ? "active" : ""}>  Adventure </button>
