@@ -6,6 +6,8 @@ import ModalAuth from "../../components/ModalAuth";
 import userService from "../../services/user.service";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 
 
@@ -78,6 +80,7 @@ const Register = () => {
     return (
         
          <div>
+             <Header/>
              <ModalAuth title="Erreur" isActive={showModal} closeFunction={()=>setShowModal(!showModal)} type="information">
                     <p>Une erreur est survenue, veuillez contacter le service client.</p>
             </ModalAuth>
@@ -157,7 +160,7 @@ const Register = () => {
             </form>
             {success &&  succesRegister()}
         
-
+          <Footer/>
           </div>  
         
     )

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import TitlePage from "../../components/TitlePage";
 
 const Index = () => {
@@ -23,6 +25,7 @@ const Index = () => {
   
   return (
     <div className="page__cart">
+      <Header/>
        <br/><br/><br/><br/><br/><br/>
       <TitlePage title="Watchlist" /><br/>
       
@@ -58,6 +61,8 @@ const Index = () => {
       ) : (
         <p className="text__center" style={{color: 'white'}}>Votre bibliothèque est vide</p>
       )}
+
+      <Footer/>
      
     </div>
   );

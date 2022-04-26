@@ -4,6 +4,8 @@ import movieService from "../services/movie.service";
 import Banner from "../components/Banner";
 import MovieCard from "../components/MovieCard";
 import FilterMovies from "../components/FilterMovies";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Index = () => {
   const [movies, setMovies] = useState();
@@ -38,6 +40,7 @@ const Index = () => {
  
   return (
     <div className="page__shop">
+      <Header/>
       <Banner/>
       <br/><br/>
       <div className="row">
@@ -105,6 +108,7 @@ const Index = () => {
             ))}
         </div>    
       </div>
+      <Footer/>
     </div>
   );
 };

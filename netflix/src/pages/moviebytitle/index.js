@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import TitlePage from "../../components/TitlePage";
 import movieservice from "../../services/movie.service";
 import MovieCard from "../../components/MovieCard";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const Index = () => {
   const [movies, setMovies] = useState();
@@ -28,6 +30,7 @@ const Index = () => {
 
   return (
     <div className="page__shop">
+      <Header/>
       <br/><br/>
       <br/><br/>
       <br/><br/>
@@ -56,6 +59,7 @@ const Index = () => {
           ))}
         </div>  
       </div>
+      <Footer/>
     </div>
   );
 };

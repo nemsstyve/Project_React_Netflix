@@ -6,6 +6,8 @@ import TitlePage from "../../components/TitlePage";
 import userService from "../../services/user.service";
 import ModalAuth from "../../components/ModalAuth";
 import Link from "next/link";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 const Login = () =>{
     
@@ -57,7 +59,7 @@ const Login = () =>{
 
     return (
         <div>
-           
+           <Header/>
            <ModalAuth title="Erreur" isActive={showModal} closeFunction={()=>setShowModal(!showModal)} type="information">
                     <p>Une erreur est survenue, votre email ou password est incorrect.</p>
             </ModalAuth>
@@ -100,7 +102,7 @@ const Login = () =>{
                 </center>    
             </form>
 
-            
+        <Footer/>    
         </div>
     )
 }

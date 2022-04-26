@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import withAuth from '../../HOC/withAuth';
 import Button from '../../components/Button';
 import { fontWeight } from '@mui/system';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 
 const Index = () => {
@@ -49,10 +51,12 @@ const Index = () => {
   
     return (
     <div className='profil'>
+
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
+      <Header/>
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <div className="card_profil">
            <h1> {firstname} {lastname}</h1>
@@ -62,6 +66,7 @@ const Index = () => {
              <button className="profil_button" onClick={logout}>Logout</button>
         </p>
       </div>
+      <Footer/>
     </div>
        
     );
