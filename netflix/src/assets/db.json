@@ -1,20 +1,12 @@
 {
   "users": [
     {
-      "email": "gueyebachir98@gmail.com",
-      "password": "$2a$10$u16tnDOQIZmRCn2t0.sEw.761e5hiPt.TpBvwokHBv7g5MPFDmlgy",
-      "username": "gueyebachir",
-      "firstname": "Bassirou",
-      "lastname": "gueye",
+      "email": "nematchastyve@gmail.com",
+      "password": "$2a$10$kuIVzfnPZuMiEQewxDYLb.SNqzSql0q0nyJPqTFPPvr5KBz313A2q",
+      "username": "snematcha",
+      "firstname": "Styve",
+      "lastname": "NEMATCHA",
       "id": 1
-    },
-    {
-      "email": "ollandiaye@gmail.com",
-      "password": "$2a$10$Cd0zRE8v.pAlEzhMLJU9Du1V4H7wEn9TMSMyIUawgrBkU8Xs5zOqi",
-      "username": "Olla",
-      "firstname": "Ouleye Diaw",
-      "lastname": "Cisse",
-      "id": 2
     }
   ]
 }
